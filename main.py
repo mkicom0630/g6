@@ -74,6 +74,7 @@ if not os.path.exists("data"):
 # 각 경로에 있는 파일들을 정적 파일로 등록합니다.
 register_theme_statics(app)
 app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/myflash", StaticFiles(directory="static/myflash"), name="myflash")
 app.mount("/data", StaticFiles(directory="data"), name="data")
 
 # 플러그인 라우터 우선 등록

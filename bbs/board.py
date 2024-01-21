@@ -3,6 +3,7 @@
 # 테이블명은 write 로, 글 한개에 대한 의미는 write 와 post 를 혼용하여 사용합니다.
 import datetime
 import os
+import base64
 from datetime import datetime
 from typing import List
 from typing_extensions import Annotated
@@ -971,7 +972,39 @@ async def read_post(
     #         "sst": request.query_params.get("sst"),
     #         "sod": request.query_params.get("sod"),
     #     }).body.decode("utf-8")
-
+    file_dir_ = "swf"
+    fl_num_ = write.wr_id
+    if fl_num_ <= 50000:
+        file_dir_ = "pre_swf/01"
+    else:
+        if fl_num_ >= 50001 and fl_num_ <= 100000:
+            file_dir_ = "pre_swf/02"
+        else:
+            if fl_num_ >= 100001 and fl_num_ <= 150000:
+                file_dir_ = "pre_swf/03"
+            else:
+                if fl_num_ >= 150001 and fl_num_ <= 200000:
+                    file_dir_ = "pre_swf/04"
+                else:
+                    if fl_num_ >= 200001 and fl_num_ <= 250000:
+                        file_dir_ = "pre_swf/05"
+                    else:
+                        if fl_num_ >= 250001 and fl_num_ <= 300000:
+                            file_dir_ = "pre_swf/06"
+                        else:
+                            if fl_num_ >= 300001 and fl_num_ <= 350000:
+                                file_dir_ = "pre_swf/07"
+                            else:
+                                if fl_num_ >= 350001 and fl_num_ <= 400000:
+                                    file_dir_ = "pre_swf/08"
+                                else:
+                                    if fl_num_ >= 400001 and fl_num_ <= 450000:
+                                        file_dir_ = "pre_swf/09"
+                                    else:
+                                        if fl_num_ >= 450001 and fl_num_ <= 500000:
+                                            file_dir_ = "pre_swf/10"
+                                        else:
+                                            file_dir_ = "swf"
     context = {
         "request": request,
         "board": board,
@@ -986,6 +1019,7 @@ async def read_post(
         "is_write": board_config.is_write_level(),
         "is_reply": board_config.is_reply_level(),
         "is_comment_write": board_config.is_comment_level(),
+        "fl_dir": file_dir_
     }
     return templates.TemplateResponse(
         f"/board/{board.bo_skin}/read_post.html", context)

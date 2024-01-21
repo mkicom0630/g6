@@ -40,7 +40,6 @@
                     <td><a href="/admin/point_list?sfl=mb_id&stx={{ member.mb_id }}">{{ member.mb_point|number_format }}</a></td>
                     <td class="td_boolean">{{ '예' if member.mb_mailling else '아니오' }}</td>
                     <td class="td_boolean">{{ '예' if member.mb_open else '아니오' }}</td>
-                    <td class="td_boolean">{{ '예' if member.mb_email_certify.year > 2000 else '아니오' }}</td>
                     <td class="td_boolean">{{ '예' if member.mb_intercept_date else '아니오' }}</td>
                     <td class="td_category">
                         {% if group_count > 0 %}

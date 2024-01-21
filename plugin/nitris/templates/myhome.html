@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+    <div style="display: flex; align-items:center; background-color: #2e2e2e;">
+        <img src="https://www.zuzunza.com/theme/eb4_basic/image/level_icon/eyoom/zuzunza/12.gif">
+        <font size="3" color="orange">&nbsp;&nbsp;&nbsp;{{ mb_nick }}</font><font size="3" color="white">님</font><br>
+    </div>
+    <div id="wallpaper">
+        <embed src="https://www.zuzunza.com/data/member/cover/sharhene777.swf" width="100%" />
+    </div>
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">공지</button>
+          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">방명록</button>
+          <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">캐릭터</button>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  공지 아이템 1
+                  <span class="badge bg-primary rounded-pill">14</span>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  방명록 아이템 1
+                  <span class="badge bg-primary rounded-pill">14</span>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <div class="card text-center">
+                <div class="card-header">
+                  Featured
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                <div class="card-footer text-muted">
+                  2 days ago
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="hr">
+    <button type="button" class="btn btn-secondary" onclick="location.href='/nitris/myhome/{{ mb_id }}/blog';">블로그</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/nitris/myhome/{{ mb_id }}/clip';">클립</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/nitris/myhome/{{ mb_id }}/myillust';">일러스트</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/nitris/myhome/{{ mb_id }}/myflash';">플래시</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/nitris/myhome/{{ mb_id }}/mytoon';">만화</button>
+    <hr class="hr">
+    <div class="s_row">
+      {% for write in writes %}
+      <div class="s_column">
+        <a href="/board/{{ bo_table }}/{{ write.wr_id }}">
+          <div class="s_card">
+            <div style="margin-bottom: 30px">
+              {% set thumbnail=get_list_thumbnail(request, board, write, 320, 180) %}
+              {% if thumbnail.src %}
+              <img src="{{ thumbnail.src }}" width="320" height="210" alt="{{ thumbnail.alt }}">
+              {% else %}
+              <img src="{{ url_for('static', path='/img/no_img.png') }}" width="320" height="210" alt="이미지가 없습니다." width="{{ thumb_width }}" height="{{ thumb_height }}">
+              {% endif %}
+            </div>
+            <p><font size="5">{{ write.wr_subject }}</font></p>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+{% endblock %}

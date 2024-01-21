@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ request.state.title }}{% endblock title %}
+
+{% block content %}
+    <h2 class="sound_only">공지사항</h2>
+    <div class="latest_top_wr">
+      {{ render_latest_posts(request, 'main_list', 'firstfox', 4, 23)|safe }}
+    </div>
+    <div class="latest_wr">
+        {{ render_latest_posts(request, 'pic_list2', 'clip', 4, 23)|safe }}
+        {{ render_latest_posts(request, 'pic_list2', 'myflash', 4, 23)|safe }}
+        {{ render_latest_posts(request, 'pic_list2', 'storyteller', 4, 23)|safe }}
+    </div>
+    <div class="latest_wr">
+        {{ render_latest_posts(request, 'pic_block', 'myillust', 4, 23)|safe }}
+    </div>
+    <div class="latest_wr">
+        {{ render_latest_posts(request, 'pic_block', 'mytoon', 4, 23)|safe }}
+    </div>
+{% endblock content %}

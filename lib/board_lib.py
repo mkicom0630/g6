@@ -1070,7 +1070,6 @@ def send_write_mail(request: Request, board: Board, write: WriteBaseModel, origi
 
     db.close()
 
-
 def get_list_thumbnail(request: Request, board: Board, write: WriteBaseModel, thumb_width: int, thumb_height: int, **kwargs):
     """게시글 목록의 섬네일 이미지를 생성한다.
 
@@ -1085,7 +1084,6 @@ def get_list_thumbnail(request: Request, board: Board, write: WriteBaseModel, th
     images, files = BoardFileManager(board, write.wr_id).get_board_files_by_type(request)
     source_file = None
     result = {"src": "", "alt": ""}
-
     if images:
         # TODO : 게시글의 파일정보를 캐시된 데이터에서 조회한다.
         # 업로드 파일 목록
@@ -1096,9 +1094,14 @@ def get_list_thumbnail(request: Request, board: Board, write: WriteBaseModel, th
         # 게시글 본문
         editor_images = get_editor_image(write.wr_content, view=False)
         for image in editor_images:
+            imageS = image
             ext = image.split(".")[-1].lower()
             # TODO: 아래 코드가 정상처리되는지 확인 필요
             # image의 경로 앞에 /가 있으면 /를 제거한다. 에디터 본문의 경로와 python의 경로가 다르기 때문에..
+            if image.startswith("https://www.zuzunza.com"):
+                image = image.replace("https://www.zuzunza.com","")
+            if image.startswith("http://www.zuzunza.com"):
+                image = image.replace("http://www.zuzunza.com","")
             if image.startswith("/"):
                 image = image[1:]
 
@@ -1109,13 +1112,17 @@ def get_list_thumbnail(request: Request, board: Board, write: WriteBaseModel, th
                     and ext in config.cf_image_extension):
                 source_file = image
                 break
+            else:
+                source_file = imageS
+                
 
     # 섬네일 생성
     if source_file:
         src = thumbnail(source_file, width=thumb_width, height=thumb_height, **kwargs)
         if src:
-            result["src"] = src
-
+            result["src"] = '/' + src
+        else:
+            result["src"] = source_file
     return result
 
 
@@ -1348,7 +1355,6 @@ def render_latest_posts(request: Request, skin_name: str = 'basic', bo_table: st
     """
     templates = UserTemplates()
     templates.env.globals["get_list_thumbnail"] = get_list_thumbnail
-
     device = request.state.device
     file_cache = FileCache()
     cache_filename = f"latest-{bo_table}-{device}-{skin_name}-{rows}-{subject_len}-{file_cache.get_cache_secret_key()}.html"

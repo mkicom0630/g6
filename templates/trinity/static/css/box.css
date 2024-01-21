@@ -1,0 +1,89 @@
+/* Float columns side by side */
+.s_column {
+  float: left;
+  width: 370px;
+  height: 320px;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+/* row - center */
+.s_row { margin: 0 auto; 
+  height: 300px;
+}
+
+
+/* Responsive columns */
+@media screen and (max-width: 2229px) {
+  .row {
+    width: 1900px;
+  }
+}
+
+@media screen and (max-width: 2029px) {
+  .row {
+    width: 1800px;
+  }
+}
+
+@media screen and (max-width: 1829px) {
+  .row {
+    width: 1600px;
+  }
+}
+
+@media screen and (max-width: 1629px) {
+  .row {
+    width: 1400px;
+  }
+}
+
+@media screen and (max-width: 1429px) {
+  .row {
+    width: 1200px;
+  }
+}
+
+@media screen and (max-width: 1229px) {
+  .row {
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1029px) {
+  .row {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 829px) {
+  .row {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 629px) {
+  .row {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 429px) {
+  .row {
+    width: 100%;
+  }
+  
+  .column {
+    width: 100%;
+    display: block;
+   }
+
+}
+
+/* Style the counter cards */
+.s_card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f3f3f3;
+}
