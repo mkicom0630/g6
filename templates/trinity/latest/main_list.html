@@ -1,7 +1,7 @@
 {% if board.bo_use_sideview %}
     {% import "/sideview/macros.html" as sideview %}
 {% endif %}
-{% set thumb_width, thumb_height = 400, 200 %}
+{% set thumb_width, thumb_height = 500, 350 %}
 
 <div class="slider-wrap con" data-slick-autoplay-status="Y">
     <div class="slider main-slider con">
@@ -20,7 +20,7 @@
                     <a href="{{ url_for('read_post', bo_table=bo_table, wr_id=write.wr_id) }}" class="lt_img">
                     {% set thumbnail=get_list_thumbnail(request, board, write, thumb_width, thumb_height) %}
                     {% if thumbnail.src %}
-                    <img src="/{{ thumbnail.src }}" alt="{{ thumbnail.alt }}">
+                    <img src="{{ thumbnail.src }}" alt="{{ thumbnail.alt }}">
                     {% else %}
                     <img src="{{ url_for('static', path='/img/no_img.png') }}" alt="이미지가 없습니다." width="{{ thumb_width }}" height="{{ thumb_height }}">
                     {% endif %}
@@ -65,25 +65,7 @@
             `;
         },
     });
-
-    // progressbar 다 차면 슬라이드 시키기
-    setInterval(function() {
-        $('.slider-wrap > .main-slider').each(function(index, node) {
-            var $slider = $(node);
-            
-            if ( $slider.parent().attr('data-slick-autoplay-status') !== 'N' ) {
-                var width = $slider.find('.slick-dots .slick-active > button > .s-line-fill').css('width');
-                var buttonWidth = $slider.find('.slick-dots .slick-active > button').css('width');
-
-                if ( width == buttonWidth ) {
-                    $slider.slick('slickNext');
-                }
-            }
-        });
-    }, 500);
-
-    // 최신글 없을 시 슬라이더 삭제
-    if ($('.slide-con').length == 0) {
-        $('.slick-dots').remove();
-    }
+    $('.slick-dots').remove();
 </script>
+<hr class="hr" />
+</br>

@@ -114,6 +114,7 @@ class DBConnect(DBSetting):
             self._url,
             poolclass=QueuePool,
             pool_size=20,
+            pool_recycle=600,
             max_overflow=40,
             pool_timeout=60
         )

@@ -8,21 +8,6 @@
     
         {% include "/bbs/newwin.inc.html" %}
 
-    <div id="tnb">
-      <div class="inner">
-          <!-- <ul id="hd_define">
-            <li class="active"><a href="/">커뮤니티</a></li>
-            <li><a href="/shop">쇼핑몰</a></li>
-          </ul> -->
-          <ul id="hd_qnb">
-            <li><a href="/bbs/current_connect" class="visit">
-                접속자<strong class="visit-num">{{ current_login_count[0] }}</strong></a>
-                <!-- current_login_count[1]은 회원 수 -->
-            </li>
-        </ul>
-        </div>
-    </div>
-
     <div id="hd_wrapper">
 
         <div id="logo">
@@ -47,15 +32,6 @@
 
           <!-- 메뉴 -->
           {% include "mobile/bbs/menu.html" ignore missing %}
-
-          <ul id="hd_nb">
-              <li class="hd_nb3">
-                  <a href="/bbs/current_connect" id="snb_cnt">
-                      <i class="fa fa-users" aria-hidden="true"></i>접속자
-                     <span>{{ current_login_count[0]|number_format }}</span>
-                  </a>
-              </li>
-          </ul>
       </div>
 
 

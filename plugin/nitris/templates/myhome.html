@@ -57,24 +57,38 @@
     <button type="button" class="btn btn-secondary" onclick="location.href='/nitris/myhome/{{ mb_id }}/myillust';">일러스트</button>
     <button type="button" class="btn btn-secondary" onclick="location.href='/nitris/myhome/{{ mb_id }}/myflash';">플래시</button>
     <button type="button" class="btn btn-secondary" onclick="location.href='/nitris/myhome/{{ mb_id }}/mytoon';">만화</button>
-    <hr class="hr">
-    <div class="s_row">
-      {% for write in writes %}
-      <div class="s_column">
-        <a href="/board/{{ bo_table }}/{{ write.wr_id }}">
-          <div class="s_card">
-            <div style="margin-bottom: 30px">
-              {% set thumbnail=get_list_thumbnail(request, board, write, 320, 180) %}
+<hr class="hr">
+<div class="d-flex p-2">
+    <div class="s_column shadow-sm p-3 mb-5 rounded" style="width: 100%;">
+        {% for write in writes -%}
+        <div class="s_row shadow-sm p-3 mb-5 rounded card">
+            <a href="/board/{{ bo_table }}/{{ write.wr_id }}">
+              {% set thumbnail=get_list_thumbnail(request, board, write, 320, 235) %}
               {% if thumbnail.src %}
-              <img src="{{ thumbnail.src }}" width="320" height="210" alt="{{ thumbnail.alt }}">
+              <img src="{{ thumbnail.src }}" width="100%" alt="{{ thumbnail.alt }}">
               {% else %}
-              <img src="{{ url_for('static', path='/img/no_img.png') }}" width="320" height="210" alt="이미지가 없습니다." width="{{ thumb_width }}" height="{{ thumb_height }}">
+              <img src="{{ url_for('static', path='/img/no_img.png') }}" width="100%" alt="이미지가 없습니다." width="{{ thumb_width }}" height="{{ thumb_height }}">
               {% endif %}
+            </a>
+            <div class="card-body">
+              <a href="/board/{{ bo_table }}/{{ write.wr_id }}">
+                    {{ write.wr_subject }} || {% if write.wr_comment %}<span class="lt_cmt"><span class="sound_only">댓글</span>{{ write.wr_comment }}</span>{% endif %}
+              </a>
+              <p class="card-text">
+                <div class="lt_info">
+                    <span class="lt_date">{{ write.wr_datetime }}</span>              
+                </div>
+              </p>
             </div>
-            <p><font size="5">{{ write.wr_subject }}</font></p>
+        </div>
+        {% else -%}
+        <div class="shadow-sm p-3 mb-5 rounded card">
+          <div class="card-body">
+            게시물이 없습니다.
           </div>
-        </a>
-      </div>
-      {% endfor %}
+        </div>
+        {%- endfor %}
     </div>
+</div>
+
 {% endblock %}

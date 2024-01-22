@@ -8,22 +8,28 @@
 }
 :root[color-theme='light'] { /* 스위치 버튼 */
  --lightVisible: none; --darkVisible: inline-block; /* background */
- --inputBg: #fff; --bodyBg: #fff; --wrapperBg: #f6f6f6; --contBg: #fff; --gnbBg: rgba(0,0,0,0.1); --menuBg: #4158d1; --joinBg: #f7f7f7; --prHover: #f7f7f7; --pointBg: #edf3fc; --bovHover: #f7f7f7; --boNoticeBg: #fff6fa; --footerBg: #f8f3f2; --ftCopyBg: #f1e7e5; --evenTdBg: #fbfbfb; --copyHvBg: #f4f4f4; --newBg: #f7f7f7; --priThBg: #f7f7f9; --pgBg: #eee; --autoBg: #eee; --pgHvBg: #fafafa; --scrapBg: #f8ebea; --boListBg: #ccd1d9; --btnPrvBg: #fff1f1; --noImgBg: #eaeaea; --gnbShadowBg: #37370566; --autoPopBg: #e8e8e8; --autoHvBg: #dbdbdb; /* 폰트색상 */
+ --inputBg: #fff; --bodyBg: #fff; --wrapperBg: #ffffff; --contBg: #fff; --gnbBg: rgba(0,0,0,0.1); --menuBg: #4158d1; --joinBg: #f7f7f7; --prHover: #f7f7f7; --pointBg: #edf3fc; --bovHover: #f7f7f7; --boNoticeBg: #fff6fa; --footerBg: #f8f3f2; --ftCopyBg: #f1e7e5; --evenTdBg: #fbfbfb; --copyHvBg: #f4f4f4; --newBg: #f7f7f7; --priThBg: #f7f7f9; --pgBg: #eee; --autoBg: #eee; --pgHvBg: #fafafa; --scrapBg: #f8ebea; --boListBg: #ccd1d9; --btnPrvBg: #fff1f1; --noImgBg: #eaeaea; --gnbShadowBg: #37370566; --autoPopBg: #e8e8e8; --autoHvBg: #dbdbdb; /* 폰트색상 */
  --fontColor: #000; --gnbFontColor: #080808; --prFontColor: #465168; --btnColor: #000; --bovColor: #666; --tdColor: #666; --bovTitColor: #555; --iconColor: #4b5259; --ptStatusColor: #737373; --moreOptColor: #6b757c; --ftColor: #525252; --boListColor: #6f534e; --moreColor: #c4bab8; /* border */
- --border: 1px solid #e5ecee; --topBtnBorder: 2px solid #00000032; --inputBorder: 1px solid #d0d3db; --gnbBorder: 1px solid #e0e2e5; --olBorder: 1px solid #d5d9dd; --scrabBorder: 1px solid #e5ecee; --moreUlBorder: 1px solid #b8bfc4; --moreLiBorder: 1px solid #f1f1f1; --afterBorder: transparent transparent #fff transparent; --beforeBorder: transparent transparent #e5ecee transparent; --priTableBorder: 1px solid #d8dbdf; --qaBorder: 1px solid #ffded8; --fileBorder: 2px solid #00000010; --shareBorder: 1px solid #d5d5d5; --autoLiBorder: 1px solid #ffffff; --autoUlBorder: 1px solid #e8e8e8; } 
+ --border: 1px solid #e5ecee; --topBtnBorder: 2px solid #00000032; --inputBorder: 1px solid #d0d3db; --gnbBorder: 1px solid #e0e2e5; --olBorder: 1px solid #d5d9dd; --scrabBorder: 1px solid #e5ecee; --moreUlBorder: 1px solid #b8bfc4; --moreLiBorder: 1px solid #f1f1f1; --afterBorder: transparent transparent #fff transparent; --beforeBorder: transparent transparent #e5ecee transparent; --priTableBorder: 1px solid #d8dbdf; --qaBorder: 1px solid #ffded8; --fileBorder: 2px solid #00000010; --shareBorder: 1px solid #d5d5d5; --autoLiBorder: 1px solid #ffffff; --autoUlBorder: 1px solid #e8e8e8; 
+ --cardColor: white;
+ --arcbannerColor: rgb(255, 136, 0);
+} 
 :root[color-theme='dark'] { /* 스위치 버튼 */
  --lightVisible: inline-block; --darkVisible: none; /* background */
  --inputBg: #323235; --bodyBg: #151616; --wrapperBg: #151616; --contBg: #252525; --gnbBg: rgba(0,0,0,0.4); --menuBg: #323235; --joinBg: #151616; --prHover: #151616; --pointBg: #1f1d1d; --bovHover: #1f1d1d; --boNoticeBg: #1b1716; --footerBg: #242020; --ftCopyBg: #2b2727; --evenTdBg: #1f1d1d; --copyHvBg: #1f1d1d; --newBg: #1f1d1d; --priThBg: #242424; --pgBg: #323235; --autoBg: #3a3a3a; --pgHvBg: #1f1d1d; --scrapBg: #493937; --boListBg: #38393b; --btnPrvBg: #363636; --noImgBg: #1f1d1d; --gnbShadowBg: #00000080; --autoPopBg: #ffffff40; --autoHvBg: #525252; /* 폰트색상 */
  --fontColor: #fff; --gnbFontColor: #a0a0a0; --prFontColor: #a0a0a0; --btnColor: #4158d1; --bovColor: #b9b9b9; --tdColor: #a0a0a0; --bovTitColor: #bababa; --iconColor: #fff; --ptAllColor: #8d8c8c; --ptStatusColor: #2c2c2c; --moreOptColor: #a0a0a0; --ftColor: #999999; --boListColor: #a08a85; --moreColor: #646464; /* border */
  --border: 1px solid #383838; --topBtnBorder: 2px solid #ffffff50; --inputBorder: none; --gnbBorder: 1px solid #383838; --olBorder: 1px solid #383838; --scrabBorder: 1px solid #616161; --moreUlBorder: 1px solid #646464; --moreLiBorder: 1px solid #383838; --afterBorder: transparent transparent #212020 transparent; --beforeBorder: transparent transparent #383838 transparent; --priTableBorder: 1px solid #414141; --qaBorder: 1px solid #504544; --fileBorder: 2px solid #ffffff24; --shareBorder: 1px solid #4d4d4d; --autoLiBorder: 1px solid #252525; --autoUlBorder: 1px solid #ffffff40; /* filter */
- --invert: invert(92%); } 
+ --invert: invert(92%); 
+ --cardColor: gray;
+ --arcbannerColor: #4b4b4d;
+} 
 
 
 /* 초기화 */
 html { overflow-y:scroll } 
 body { margin:0; padding:0; font-size:0.9em; font-family:'Pretendard-Regular', dotum, sans-serif; background:var(--bodyBg) } 
 html, h1, h2, h3, h4, h5, h6, form, fieldset, img { margin:0; padding:0; border:0 } 
-h1, h2, h3, h4, h5, h6 { font-size:1em; font-family:'Pretendard-Regular', dotum, sans-serif } 
+h1, h2, h3, h4, h5, h6 { font-size:1em; font-family:'Pretendard-Regular', dotum, sans-serif; color: var(--fontColor);} 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block } 
 
 ul, dl,dt,dd { margin:0; padding:0; list-style:none } 
@@ -32,6 +38,13 @@ label, input, button, select, img { vertical-align:middle; font-size:1em }
 input, button { margin:0; padding:0; font-family:'Pretendard-Regular', dotum, sans-serif; font-size:1em } 
 input[type="submit"] { cursor:pointer } 
 button { cursor:pointer } 
+.card{
+  background-color: var(--inputBg);
+  text-decoration: none; color: var(--fontColor);
+}
+.card a{
+  text-decoration: none; color: var(--fontColor);
+}
 
 textarea, select { font-family:'Pretendard-Regular', dotum, sans-serif; font-size:1em } 
 select { margin:0 } 
@@ -84,9 +97,9 @@ input[type=text]:focus,input[type=password]:focus, textarea:focus,select:focus {
 #tnb:after { display:block; visibility:hidden; clear:both; content:"" } 
 #tnb .inner { margin:0 auto } 
 
-#hd_wrapper { max-width: 1500px; margin: 0 auto; position: relative; background: #ff9d2d; border-radius: 8px; height: 80px; display: flex; justify-content: space-between; align-items: center; padding: 0px 20px; } 
+#hd_wrapper { max-width: 1500px; margin: 0 auto; position: relative; background: var(--arcbannerColor); border-radius: 8px; height: 80px; display: flex; justify-content: space-between; align-items: center; padding: 0px 20px; } 
 
-#logo { float:left; width: 54px; } 
+#logo { float:left; width: 200px; } 
 #logo img { width: 100%; } 
 
 .hd_sch_wr { width:445px; } 
@@ -165,6 +178,29 @@ a.gnb_2da:hover { color:#fff; background:#e7664d;-moz-transition:all 0.3s ease-o
 #gnb_all_bg { display:none; background:rgba(0,0,0,0.1); width:100%; height:100%; position:fixed; left:0; top:0; z-index:999 } 
 
 /* 중간 레이아웃 */
+.btn {
+  font-size: 15px;
+}
+#nav-tab {
+  background-color: var(--wrapperBg);
+  color: var(--fontColor);
+}
+#nav-tabs {
+  background-color: var(--wrapperBg);
+  color: var(--fontColor);
+}
+#nav-tabContent {
+  background-color: var(--wrapperBg);
+  color: var(--fontColor);
+}
+.list-group {
+  background-color: var(--wrapperBg);
+  color: var(--fontColor);
+}
+.list-group-item {
+  background-color: var(--wrapperBg);
+  color: var(--fontColor);
+}
 #wrapper { background: var(--wrapperBg); } 
 #container_wr:after { display:block; visibility:hidden; clear:both; content:"" } 
 #container_wr { margin:0 auto; zoom:1 } 
@@ -431,7 +467,7 @@ a.btn_admin,.btn_admin { display:inline-block; color:#d13f4a; text-decoration:no
 .sv_wrap { position:relative; font-weight:normal } 
 .sv_wrap .sv { z-index:1000; display:none; margin:5px 0 0; font-size:0.92em; background:#333;box-shadow:2px 2px 3px 0px rgba(0,0,0,0.2) } 
 .sv_wrap .sv:before { content:""; position:absolute; top:-6px; left:15px; width:0; height:0; border-style:solid; border-width:0 6px 6px 6px; border-color:transparent transparent #333 transparent } 
-.sv_wrap .sv a { display:inline-block; margin:0; padding:0 10px; line-height:30px; width:100px; font-weight:normal; color:#bbb } 
+.sv_wrap .sv a { display:inline-block; margin:0; padding:0 10px; line-height:30px; width:130px; font-weight:normal; color:#bbb } 
 .sv_wrap .sv a:hover { background:#000; color:#fff } 
 .sv_member { color:var(--fontColor) } 
 .sv_on { display:block !important; position:absolute; top:23px; left:0px; width:auto; height:auto } 
@@ -1073,8 +1109,14 @@ html.no-overflowscrolling #autosave_pop { height:auto; max-height:10000px !impor
 .absolute-left { position:absolute; left:0; } 
 .absolute-right { position:absolute; right:0; } 
 .absolute-middle { position:absolute; top:50%; transform:translateY(-50%); } 
-.table { display:table; } 
+.table { 
+  background-color: var(--inputBg);
+  text-decoration: none; color: var(--fontColor); 
+} 
 .table-cell { display:table-cell; } 
+.table a{
+  text-decoration: none; color: var(--fontColor);
+}
 .blind, legend { overflow: hidden; position: absolute; width: 1px; height: 1px; font-size: 12px; clip: rect(1px, 1px, 1px, 1px); } 
 button { cursor:pointer; padding:0; font-size:inherit; } 
 .con-min-width { min-width:320px; } 
@@ -1956,16 +1998,16 @@ html.no-overflowscrolling #autosave_pop {height:auto;max-height:10000px !importa
 #bo_v_ans_form .btn_submit {height:50px;padding:0 20px;border-radius:3px;font-weight:bold;font-size:1.083em}
 
 /* 게시판 댓글 */
-#bo_vc {padding:20px 20px 10px;border-top:1px solid #cfded8;border-bottom:1px solid #cfded8;background:#f5f6fa}
+#bo_vc {padding:20px 20px 10px;border-top:1px solid #cfded8;border-bottom:1px solid #cfded8;background:var(#323235);}
 #bo_vc h2 {margin-bottom:10px}
 #bo_vc article {padding:0 0 10px;border-top:1px dotted #ccc}
 #bo_vc header {position:relative;padding:15px 0 5px}
 #bo_vc header .icon_reply {position:absolute;top:15px;left:-20px}
-#bo_vc .sv_wrap {margin-right:15px}
+#bo_vc .sv_wrap {margin-right:15px; color: var(--ftColor);}
 #bo_vc .member, #bo_vc .guest, #bo_vc .sv_member, #bo_vc .sv_guest {font-weight:bold}
 .bo_vc_hdinfo {display:inline-block;margin:0 15px 0 5px}
 #bo_vc h1 {position:absolute;font-size:0;line-height:0;overflow:hidden}
-#bo_vc a {color:#000;text-decoration:none}
+#bo_vc a {color: var(--ftColor); text-decoration:none}
 #bo_vc p {padding:0 0 5px;line-height:1.8em}
 #bo_vc p a {text-decoration:underline}
 #bo_vc_empty {margin:0;padding:20px !important;text-align:center}
@@ -2322,7 +2364,7 @@ html.remodal-is-locked {overflow-y:scroll !important}
  #aside { width: 100%; margin: 0px 20px 20px 0px; } 
  #visit { margin-top: 0px; } 
  #container { width: 100%; margin: 20px 0px; } 
- #logo { position: absolute; left: 50%; transform: translateX(-50%); width: 48px; } 
+ #logo { position: absolute; left: 50%; transform: translateX(-50%); width: 200px; } 
  .profile_wrap { display: none; } 
  #ft_wr .ft_cnt { margin-bottom: 40px; } 
  #ft_wr .ft_cnt:last-child { margin-bottom: 0px; } 
